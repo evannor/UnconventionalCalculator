@@ -32,6 +32,16 @@ function calculateResult(calculationType) {
   const initialResult = currentResult;
   let mathOperator;
 
+  if (
+    (calculationType !== "add" &&
+      calculationType !== "subtract" &&
+      calculationType !== "multiply" &&
+      calculationType !== "divide") ||
+    !enteredNumber // enteredNumber === 0 (saying if its true that enteredNumber === 0 (value is falsy))
+  ) {
+    return;
+  }
+
   if (calculationType === "add") {
     currentResult += enteredNumber;
     mathOperator = "+";
